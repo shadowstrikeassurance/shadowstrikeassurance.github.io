@@ -104,6 +104,8 @@
 		function showEmail() {
 			var emailElement = document.getElementById("email");
 			emailElement.style.display = "block";
+			var recaptchaContainer = document.querySelector(".recaptcha-container");
+			recaptchaContainer.style.display = "none";
 		}
 
 		function onSubmit(token) {
