@@ -101,15 +101,11 @@
 	</style>
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script>
-		function showEmail() {
+		function onSubmit(token) {
 			var emailElement = document.getElementById("email");
 			emailElement.style.display = "block";
 			var recaptchaContainer = document.querySelector(".recaptcha-container");
 			recaptchaContainer.style.display = "none";
-		}
-
-		function onSubmit(token) {
-			showEmail();
 		}
 	</script>
 </head>
