@@ -111,3 +111,7 @@ footer {
 .grecaptcha {
 	margin: 0 auto;
 }
+
+.center-aligned {
+    text-align: center;
+}
