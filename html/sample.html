@@ -1,55 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="ShadowStrike Assurance offers ethical hacking and penetration testing services to uncover vulnerabilities, safeguard data, and elevate resilience.">
-	<title>ShadowStrike Assurance</title>
-	<link rel="stylesheet" href="styles.css">
-	<script>
-		function hideErrorMessage() {
-			document.getElementById('pdf-error').style.display = 'none';
-		}
-	</script>
-</head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZ7MS4HVX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EKZ7MS4HVX');
-</script>
-
-<body>
-	<div class="content-container">
-		<header>
-			<img src="resources/canadian.png" alt="ShadowStrike Assurance background" id="background">
-			<h1>ShadowStrike Assurance</h1>
-			<p>Uncover Vulnerabilities. Safeguard Data. Elevate Resilience.</p>
-		</header>
-		
-		<nav>
-		<a href="index.html">Home</a>
-		<a href="about.html">About</a>
-		<a href="services.html">Services</a>
-		<a href="contact.html">Contact</a>
-		</nav>
-		
-		<main>
-			<h2>Sample Report</h2>
-			<div class="pdf-container">
-				<embed src="resources/sample.pdf" type="application/pdf" width="100%" height="100%" onload="hideErrorMessage()">
-					<p id="pdf-error">Your browser does not support embedded PDFs.</p>
-				</embed>
-			</div>
-		</main>
-		
-		<footer>
-			<p>&copy; 2023 ShadowStrike Assurance</p>
-		</footer>
-	</div>
-</body>
-</html>
+<h2>Sample Report</h2>
+<div class="pdf-container">
+    <object data="resources/sample.pdf" type="application/pdf" width="100%" height="100%">
+        <p>It appears your browser does not support embedded PDFs. You can <a href="resources/sample.pdf" target="_blank">download the PDF file</a> instead.</p>
+    </object>
+</div>

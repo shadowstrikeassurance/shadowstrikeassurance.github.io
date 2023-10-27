@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Get the main content area and menu links
     const content = document.getElementById("content");
-    const menuLinks = document.querySelectorAll("#menu a");
 
     // Function to load content from the specified URL
     function loadContent(url) {
@@ -19,13 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
-    // Add click event listeners to menu links
-    menuLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
+    // Add a delegated click event listener to the document for menu links
+    document.addEventListener("click", function (e) {
+        if (e.target.tagName === 'A' && e.target.getAttribute("data-page")) {
             e.preventDefault();
-            const pageUrl = link.getAttribute("data-page");
+            const pageUrl = e.target.getAttribute("data-page");
             loadContent(pageUrl);
-        });
+        }
     });
 
     // Load the initial content (e.g., home.html) on page load
