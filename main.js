@@ -46,22 +46,3 @@ window.onSubmit = function (token) {
     var recaptchaContainer = document.querySelector(".recaptcha-container");
     recaptchaContainer.style.display = "none";
 };
-
-function loadGoogleTagManager() {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-EKZ7MS4HVX';
-
-    script.onload = function () {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            window.dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'G-EKZ7MS4HVX');
-    };
-
-    document.head.appendChild(script);
-}
-
-loadGoogleTagManager();
