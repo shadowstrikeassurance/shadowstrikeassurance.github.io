@@ -159,13 +159,15 @@ footer {
 
 .main-button {
     font-family: 'Courier New', monospace;
+	--button-border: #ffffff;
+	background-color: var(--button-background);
     display: inline-block;
     margin-top: 0px;
     text-decoration: none;
     color: #ffffff;
     position: relative;
     padding: 5px 10px;
-    border: 2px solid #ffffff;
+    border: 2px solid var(--button-border);
     border-radius: 5px;
 	font-size: 18px;
 }
