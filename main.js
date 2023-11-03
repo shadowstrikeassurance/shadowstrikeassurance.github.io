@@ -1,6 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     const content = document.getElementById("content");
 
+    function handleActiveNavItem(path) {
+        const navLinks = document.querySelectorAll("#menu a");
+
+        navLinks.forEach((link) => {
+            const page = link.getAttribute("data-page");
+            if (page === path) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
+    
     function loadContent(url) {
         fetch(url)
             .then((response) => response.text())
@@ -15,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
-    // Define your route mapping object
+    // Route mapping object
     const routes = {
         "/home": "html/home.html",
         "/about": "html/about.html",
@@ -47,11 +60,15 @@ document.addEventListener("DOMContentLoaded", function () {
             const pageUrl = e.target.getAttribute("data-page");
             window.history.pushState(null, "", pageUrl);
             handleRoute();
+            handleActiveNavItem(pageUrl);
         }
     });
 
     // Handle back/forward navigation
-    window.addEventListener("popstate", handleRoute);
+    window.addEventListener("popstate", function () {
+        handleRoute();
+        handleActiveNavItem(window.location.pathname);
+    });
 
     // Load the initial content (e.g., home.html) on page load
     loadContent("html/home.html");

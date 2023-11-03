@@ -75,6 +75,12 @@ nav a:hover {
     color: #ffffff;
 }
 
+nav a.active {
+    border-color: #ffffff;
+    color: #ffffff;
+    font-weight: bold;
+}
+
 main {
 	text-align: left;
 	margin: 20px;
