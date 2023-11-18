@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to handle client-side routing and menu item highlighting
     function handleRoute(path) {
+        console.log('handleroute path:', path)
         const route = routes[path] || "html/home.html";
 
         fetch(route)
