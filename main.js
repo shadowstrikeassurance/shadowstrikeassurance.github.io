@@ -57,8 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (e.target.tagName === 'A' && e.target.getAttribute("data-page")) {
             e.preventDefault();
             const pageUrl = e.target.getAttribute("data-page");
-            window.history.pushState({ path: pageUrl }, "", pageUrl);
-            handleRoute(pageUrl);
+            const normalizedPageUrl = pageUrl.startsWith('/') ? pageUrl : `/${pageUrl}`;
+            window.history.pushState({ path: normalizedPageUrl }, "", normalizedPageUrl);
+            handleRoute(normalizedPageUrl);
         }
     });
 
