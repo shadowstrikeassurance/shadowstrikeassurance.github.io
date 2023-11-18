@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to handle client-side routing and menu item highlighting
     function handleRoute(path) {
-        console.log('handleroute path:', path)
-        const route = routes[path] || "html/home.html";
+        const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+        const route = routes[normalizedPath] || "html/home.html";
 
         fetch(route)
             .then((response) => response.text())
@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         navLinks.forEach((link) => {
             const page = link.getAttribute("data-page");
-            console.log('page debug:', page, path)
             if (page === path) {
                 link.classList.add("active");
             } else {
