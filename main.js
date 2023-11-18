@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial route handling
     const initialPath = window.location.pathname;
+    console.log('initial:', initialPath);
     handleRoute(initialPath);
 });
 
