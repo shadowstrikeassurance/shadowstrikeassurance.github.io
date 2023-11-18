@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         navLinks.forEach((link) => {
             const page = link.getAttribute("data-page");
+            console.log('page debug:', page, path)
             if (page === path) {
                 link.classList.add("active");
             } else {
@@ -62,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial route handling
     const initialPath = window.location.pathname;
-    console.log('initial:', initialPath);
     handleRoute(initialPath);
 });
 
