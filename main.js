@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Error loading content: " + error);
             });
 
-        handleActiveNavItem(path);
+        handleActiveNavItem(normalizedPath);
     }
 
     // Function to handle menu item highlighting
