@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         navLinks.forEach((link) => {
             const page = link.getAttribute("data-page");
+            console.log('handleActiveNavItem debug:', page, path);
             if (page === path) {
                 link.classList.add("active");
             } else {
