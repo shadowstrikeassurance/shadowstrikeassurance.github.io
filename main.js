@@ -1,6 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
     const content = document.getElementById("content");
 
+    // Route mapping object
+    const routes = {
+        "/home": "html/home.html",
+        "/about": "html/about.html",
+        "/services": "html/services.html",
+        "/contact": "html/contact.html",
+        "/sample": "html/sample.html",
+        "/experiences": "html/experiences.html",
+    };
+
+    // Function to handle client-side routing and menu item highlighting
+    function handleRoute(path) {
+        const route = routes[path] || "html/home.html";
+
+        fetch(route)
+            .then((response) => response.text())
+            .then((html) => {
+                content.innerHTML = html;
+                if (route === "html/contact.html") {
+                    loadReCaptchaScript();
+                }
+            })
+            .catch((error) => {
+                console.error("Error loading content: " + error);
+            });
+
+        handleActiveNavItem(path);
+    }
+
+    // Function to handle menu item highlighting
     function handleActiveNavItem(path) {
         const navLinks = document.querySelectorAll("#menu a");
 
@@ -13,65 +43,26 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    
-    function loadContent(url) {
-        fetch(url)
-            .then((response) => response.text())
-            .then((html) => {
-                content.innerHTML = html;
-                if (url === "html/contact.html") {
-                    loadReCaptchaScript();
-                }
-            })
-            .catch((error) => {
-                console.error("Error loading content: " + error);
-            });
-    }
 
-    // Route mapping object
-    const routes = {
-        "/home": "html/home.html",
-        "/about": "html/about.html",
-        "/services": "html/services.html",
-        "/contact": "html/contact.html",
-        "/sample": "html/sample.html",
-        "/experiences": "html/experiences.html",
-    };
-
-    // Function to handle client-side routing
-    function handleRoute() {
-        const path = window.location.pathname;
-        const route = routes[path] || null;
-
-        if (route) {
-            loadContent(route);
-        } else {
-            loadContent("html/home.html");
-        }
-    }
-
-    // Initial route handling
-    handleRoute();
+    // Handle back/forward navigation
+    window.addEventListener("popstate", function (event) {
+        const path = event.state ? event.state.path : window.location.pathname;
+        handleRoute(path);
+    });
 
     // Handle route changes when clicking menu links
     document.addEventListener("click", function (e) {
         if (e.target.tagName === 'A' && e.target.getAttribute("data-page")) {
             e.preventDefault();
             const pageUrl = e.target.getAttribute("data-page");
-            window.history.pushState(null, "", pageUrl);
-            handleRoute();
-            handleActiveNavItem(pageUrl);
+            window.history.pushState({ path: pageUrl }, "", pageUrl);
+            handleRoute(pageUrl);
         }
     });
 
-    // Handle back/forward navigation
-    window.addEventListener("popstate", function () {
-        handleRoute();
-        handleActiveNavItem(window.location.pathname);
-    });
-
-    // Load the initial content (e.g., home.html) on page load
-    loadContent("html/home.html");
+    // Initial route handling
+    const initialPath = window.location.pathname;
+    handleRoute(initialPath);
 });
 
 function loadReCaptchaScript() {
