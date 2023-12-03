@@ -75,11 +75,3 @@ function loadReCaptchaScript() {
     script.defer = true;
     document.body.appendChild(script);
 }
-
-// Define the onSubmit function
-window.onSubmit = function (token) {
-    var emailElement = document.getElementById("email");
-    emailElement.style.display = "block";
-    var recaptchaContainer = document.querySelector(".recaptcha-container");
-    recaptchaContainer.style.display = "none";
-};
