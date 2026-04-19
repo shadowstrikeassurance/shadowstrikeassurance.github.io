@@ -1,9 +1,6 @@
 // Mobile menu
 const nav = document.getElementById("nav");
-document.getElementById("menu-btn").addEventListener("click", () => {
-  nav.classList.toggle("open");
-  if (nav.classList.contains("open")) nav.classList.add("slide-down");
-});
+document.getElementById("menu-btn").addEventListener("click", () => nav.classList.toggle("open"));
 document.querySelectorAll("#nav a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
 
 // Smooth scroll
@@ -18,13 +15,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 // Active nav
 const navLinks = document.querySelectorAll("#nav a[href^='#']");
-new IntersectionObserver(entries => {
+const activeObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) navLinks.forEach(a =>
       a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`)
     );
   });
-}, { threshold: 0.4 }).observe(...document.querySelectorAll("section[id]"));
+}, { threshold: 0.4 });
+document.querySelectorAll("section[id]").forEach(s => activeObs.observe(s));
 
 // Scroll reveal
 const ro = new IntersectionObserver(entries => {
@@ -53,7 +51,7 @@ document.getElementById("send-btn").addEventListener("click", () => {
   const message = document.getElementById("message").value.trim();
   if (!name || !email || !message) return toast("Please fill in all fields.", true);
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return toast("Enter a valid email.", true);
-  const body = `Name: ${name}%0DEmail: ${email}%0D%0DMessage:%0D${encodeURIComponent(message)}`;
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
   window.location.href = `mailto:info@bustercybersec.com?subject=${encodeURIComponent(`Message from ${name}`)}&body=${body}`;
   toast("Opening email client...");
 });
