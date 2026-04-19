@@ -1,85 +1,59 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const content = document.getElementById("content");
+// Mobile menu
+const nav = document.getElementById("nav");
+document.getElementById("menu-btn").addEventListener("click", () => {
+  nav.classList.toggle("open");
+  if (nav.classList.contains("open")) nav.classList.add("slide-down");
+});
+document.querySelectorAll("#nav a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
 
-    // Route mapping object
-    const routes = {
-        "/home": "html/home.html",
-        "/about": "html/about.html",
-        "/services": "html/services.html",
-        "/contact": "html/contact.html",
-        "/sample": "html/sample.html",
-        "/experiences": "html/experiences.html",
-    };
-
-    // Function to handle client-side routing and menu item highlighting
-    function handleRoute(path) {
-        const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-        const route = routes[normalizedPath] || "html/home.html";
-
-        fetch(route)
-            .then((response) => response.text())
-            .then((html) => {
-                content.innerHTML = html;
-                if (route === "html/contact.html") {
-                    loadReCaptchaScript();
-                }
-            })
-            .catch((error) => {
-                console.error("Error loading content: " + error);
-            });
-
-        handleActiveNavItem(normalizedPath);
-    }
-
-    // Function to handle menu item highlighting
-    function handleActiveNavItem(path) {
-        const navLinks = document.querySelectorAll("#menu a");
-
-        navLinks.forEach((link) => {
-            const page = link.getAttribute("data-page");
-            const normalizedPage = page.startsWith('/') ? page : `/${page}`;
-            if (normalizedPage === path) {
-                link.classList.add("active");
-            } else {
-                link.classList.remove("active");
-            }
-        });
-    }
-
-    // Handle back/forward navigation
-    window.addEventListener("popstate", function (event) {
-        const path = event.state ? event.state.path : window.location.pathname;
-        handleRoute(path);
-    });
-
-    // Handle route changes when clicking menu links
-    document.addEventListener("click", function (e) {
-        if (e.target.tagName === 'A' && e.target.getAttribute("data-page")) {
-            e.preventDefault();
-            const pageUrl = e.target.getAttribute("data-page");
-            const normalizedPageUrl = pageUrl.startsWith('/') ? pageUrl : `/${pageUrl}`;
-            window.history.pushState({ path: normalizedPageUrl }, "", normalizedPageUrl);
-            handleRoute(normalizedPageUrl);
-        }
-    });
-
-    // Initial route handling
-    const initialPath = window.location.pathname;
-    handleRoute(initialPath);
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    const t = document.getElementById(a.getAttribute("href").slice(1));
+    if (!t) return;
+    e.preventDefault();
+    window.scrollTo({ top: t.offsetTop - 80, behavior: "smooth" });
+  });
 });
 
-function loadReCaptchaScript() {
-    var script = document.createElement('script');
-    script.src = "https://www.google.com/recaptcha/api.js";
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
+// Active nav
+const navLinks = document.querySelectorAll("#nav a[href^='#']");
+new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) navLinks.forEach(a =>
+      a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`)
+    );
+  });
+}, { threshold: 0.4 }).observe(...document.querySelectorAll("section[id]"));
+
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); ro.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+document.querySelectorAll(".reveal").forEach(el => ro.observe(el));
+
+// Toast
+function toast(msg, err) {
+  const t = Object.assign(document.createElement("div"), { textContent: msg, className: "toast" });
+  Object.assign(t.style, {
+    position:"fixed", bottom:"1.5rem", right:"1.5rem", padding:".7rem 1.1rem",
+    borderRadius:".6rem", color:"#fff", fontFamily:"'JetBrains Mono',monospace",
+    fontSize:".8rem", zIndex:"9999", boxShadow:"0 8px 28px rgba(0,0,0,.4)",
+    background: err ? "#450a0a" : "#0d1829",
+    border: `1px solid ${err ? "#dc2626" : "rgba(6,182,212,.4)"}`
+  });
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
 }
 
-// Define the onSubmit function for recaptcha
-window.onSubmit = function (token) {
-    var emailElement = document.getElementById("email");
-    emailElement.style.display = "block";
-    var recaptchaContainer = document.querySelector(".recaptcha-container");
-    recaptchaContainer.style.display = "none";
-};
+// Contact
+document.getElementById("send-btn").addEventListener("click", () => {
+  const name    = document.getElementById("name").value.trim();
+  const email   = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+  if (!name || !email || !message) return toast("Please fill in all fields.", true);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return toast("Enter a valid email.", true);
+  const body = `Name: ${name}%0DEmail: ${email}%0D%0DMessage:%0D${encodeURIComponent(message)}`;
+  window.location.href = `mailto:info@bustercybersec.com?subject=${encodeURIComponent(`Message from ${name}`)}&body=${body}`;
+  toast("Opening email client...");
+});

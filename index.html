@@ -1,48 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="ShadowStrike Assurance offers proactive, OSCP-certified Ethical Hacking and cybersecurity services for data-sensitive sectors such as Fintech, Healthcare, and Government.">
-	<title>ShadowStrike Assurance</title>
-	<link rel="stylesheet" href="styles.css">
-	<base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buster Cybersecurity Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZ7MS4HVX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EKZ7MS4HVX');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-EKZ7MS4HVX");</script>
 
 <body>
-	<div class="background-container"></div>
-	<div class="content-container">
-		<header>
-			<img src="resources/canadian.png" alt="ShadowStrike Assurance Background" id="background">
-			<h1><a href="/">ShadowStrike Assurance</a></h1>
-			<p>Eliminating Job Security For Malicious Hackers</p>
-		</header>
-		
-		<nav id="menu">
-			<a href="/about" data-page="/about">About</a>
-            <a href="/experiences" data-page="/experiences">Experiences</a>
-            <a href="/services" data-page="/services">Services</a>
-			<a href="/sample" data-page="/sample">Sample</a>
-            <a href="/contact" data-page="/contact">Contact</a>
-		</nav>
-		
-		<main id="content"></main>
-		
-		<footer>
-			<p>&copy; 2023 ShadowStrike Assurance All Rights Reserved</p>
-		</footer>
-		
-		<script src="main.js"></script>
-	</div>
+
+  <header>
+    <a href="#" class="brand">
+      <img src="resources/buster_logo_square.png" alt="Buster Logo">
+      <div><strong>BUSTER</strong><span>Cybersecurity Solutions</span></div>
+    </a>
+    <button id="menu-btn" aria-label="Toggle menu">&#9776;</button>
+    <nav id="nav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#software">Software</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="hero-inner">
+      <p class="eyebrow"><span class="dot"></span> OSCP Certified // Alberta, Canada</p>
+      <h1>Offensive<br><span class="accent">Security.</span></h1>
+      <p class="sub">Penetration testing, red teaming, phishing simulations, and custom dev. Few deps. Clear results.</p>
+      <div class="actions">
+        <a href="#services" class="btn">View Services</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <p class="label">// Services</p>
+    <h2>What We Do</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <h3>Penetration Testing</h3>
+        <p>Spot the holes before they get picked. Detailed testing across your infrastructure and applications, with clear remediation guidance.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Red Teaming</h3>
+        <p>Full adversary simulation. We test your defenses end-to-end under realistic threat scenarios, measuring resilience not just compliance.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Phishing Campaigns</h3>
+        <p>Controlled simulations that test and train employees. Build real awareness, not just checkbox compliance.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Consulting &amp; Training</h3>
+        <p>Practical, direct, and quick. No-fluff advice on hardening your security posture, with training that actually sticks.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Secure Code Reviews</h3>
+        <p>Clear feedback, nothing cryptic. We review your codebase for security weaknesses and deliver actionable fixes.</p>
+      </div>
+      <div class="card card-cta reveal">
+        <h3>Sample Report</h3>
+        <p>See exactly what you get: a real-world pentest report showing our findings, methodology, and remediation format.</p>
+        <a href="resources/sample.pdf" target="_blank" class="btn">Download Sample</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-wrap">
+      <p class="label">// About</p>
+      <h2>Small team.<br>Big focus.</h2>
+      <div class="about-grid">
+        <div class="terminal reveal">
+          <div class="tbar">
+            <span class="tb red"></span><span class="tb yellow"></span><span class="tb green"></span>
+            <code>profile.sh</code>
+          </div>
+          <div class="tbody">
+            <p><span class="p">$</span> certifications</p>
+            <p class="o c">&rarr; OSCP Certified</p>
+            <p><span class="p">$</span> sectors</p>
+            <p class="o">Healthcare IT, Banking &amp; Financial Services</p>
+            <p><span class="p">$</span> location</p>
+            <p class="o">Alberta, Canada &#127809;</p>
+            <p><span class="p">$</span> philosophy</p>
+            <p class="o">"Make malicious hackers unemployed"</p>
+            <p><span class="p">$</span> status</p>
+            <p class="o"><span class="pdot"></span> Available for engagements</p>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <p>We work at the intersection of offensive security and minimalist software design. Small code. No bloat. Few deps. Clear results.</p>
+          <p>OSCP-certified with real-world experience across healthcare IT and the banking sector, we bring practical depth to every engagement, not just textbook methodology.</p>
+          <p>We support Alberta businesses and believe great security does not require a bloated agency price tag.</p>
+          <div class="tags">
+            <span>OSCP</span><span>Penetration Testing</span><span>Red Team</span><span>Full-Stack Dev</span><span>Alberta, Canada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="software">
+    <p class="label">// Software</p>
+    <h2>Custom Development</h2>
+    <p class="sub">Security and software go hand-in-hand. We build full-stack apps, APIs, and automation tools, dependency-light by default, with security baked in from day one.</p>
+    <div class="cards cards-3">
+      <div class="card reveal"><div class="glyph">&lt;/&gt;</div><h3>Web Apps</h3><p>Fast, scalable, and secure. Built lean with minimal dependencies.</p></div>
+      <div class="card reveal"><div class="glyph">{ }</div><h3>APIs</h3><p>Clean integrations. No over-engineering, just the right architecture.</p></div>
+      <div class="card reveal"><div class="glyph">&#9881;</div><h3>Automation</h3><p>Tools that eliminate repetitive work, for ops or internal security use.</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="label">// Contact</p>
+    <h2>Get in Touch</h2>
+    <p class="sub">Have a project in mind? We respond to every message personally.</p>
+    <form class="reveal" id="contact-form">
+      <label>Name<input type="text" id="name" placeholder="Jane Smith"></label>
+      <label>Email<input type="email" id="email" placeholder="jane@company.com"></label>
+      <label>Message<textarea id="message" rows="5" placeholder="Tell us about your project..."></textarea></label>
+      <button type="button" id="send-btn" class="btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <img src="resources/buster_logo_square.png" alt="Logo">
+    <p>&copy; 2026 Buster Cybersecurity Solutions &middot; Alberta, Canada</p>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
