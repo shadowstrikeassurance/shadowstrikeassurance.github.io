@@ -85,6 +85,17 @@ nav a:hover, nav a.active { color: var(--cyan); }
 .glyph   { font-family: var(--mono); font-size: 1.6rem; font-weight: 700; color: rgba(6,182,212,.25); margin-bottom: .75rem; transition: color .25s; }
 .card:hover .glyph { color: rgba(6,182,212,.5); }
 
+/* Plain-English explainer line inside cards */
+.plain {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(6,182,212,.18);
+  font-size: .8rem;
+  color: var(--cyan);
+  font-style: italic;
+  line-height: 1.6;
+}
+
 /* About */
 #about       { background: linear-gradient(180deg,var(--bg) 0%,#050f1f 50%,var(--bg) 100%); max-width: 100%; padding-left: 1.5rem; padding-right: 1.5rem; }
 .about-wrap  { max-width: 72rem; margin: 0 auto; }
