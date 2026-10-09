@@ -1,166 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buster Cybersecurity Solutions</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buster Cybersecurity Solutions | Offensive Security, Alberta</title>
+<meta name="description" content="OSEP and OSCP certified offensive security in Alberta, Canada. Penetration testing, red teaming, phishing simulations, secure code review and custom software.">
+<meta name="theme-color" content="#121212">
+<link rel="icon" type="image/png" href="resources/buster_logo_square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZ7MS4HVX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-EKZ7MS4HVX");</script>
-
+</head>
 <body>
 
-  <header>
-    <a href="#" class="brand">
-      <img src="resources/buster_logo_square.png" alt="Buster Logo">
-      <div><strong>BUSTER</strong><span>Cybersecurity Solutions</span></div>
-    </a>
-    <button id="menu-btn" aria-label="Toggle menu">&#9776;</button>
-    <nav id="nav">
-      <a href="#services">Services</a>
-      <a href="#why">Why It Matters</a>
-      <a href="#about">About</a>
-      <a href="#software">Software</a>
-      <a href="#contact" class="nav-cta">Contact</a>
-    </nav>
-  </header>
+<header class="site-header">
+  <a href="#top" class="brand">
+    <img src="resources/buster_logo_square.png" alt="" width="40" height="40">
+    <span><strong>Buster</strong> Cybersecurity</span>
+  </a>
+  <button id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav" aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#why">Who it&rsquo;s for</a>
+    <a href="#about">About</a>
+    <a href="#software">Software</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section id="hero">
-    <div class="hero-inner">
-      <p class="eyebrow"><span class="dot"></span> OSCP Certified // Alberta, Canada</p>
-      <h1>Offensive<br><span class="accent">Security.</span></h1>
-      <p class="sub">Ethical Hackers to find and fix security weaknesses, before criminals can exploit them.</p>
-      <div class="actions">
-        <a href="#services" class="btn">View Services</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
-      </div>
+<main id="top">
+
+<section class="hero">
+  <p class="kicker">OSEP &middot; OSCP &middot; Alberta, Canada</p>
+  <h1>We break in.<br><span class="mark">So they can&rsquo;t.</span></h1>
+  <p class="lede">Offensive security for anyone with something worth protecting.</p>
+  <p class="hero-links">
+    <a href="#contact" class="btn">Get in touch</a>
+    <a href="#services" class="textlink">What we do</a>
+  </p>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <h2>What we do</h2>
+    <p>We find the weak spots first, then show you how to fix them.</p>
+  </div>
+
+  <ol class="rows">
+    <li>
+      <span class="num">01</span>
+      <h3>Penetration testing</h3>
+      <p>We try every door and window, with permission, then hand you the list of what was unlocked.</p>
+    </li>
+    <li>
+      <span class="num">02</span>
+      <h3>Red teaming</h3>
+      <p>A full-dress rehearsal of a real attack. Your tech, your alarms, and your people, all under pressure.</p>
+    </li>
+    <li>
+      <span class="num">03</span>
+      <h3>Phishing simulations</h3>
+      <p>Safe, fake scams. See who clicks, then teach everyone to spot the real ones.</p>
+    </li>
+    <li>
+      <span class="num">04</span>
+      <h3>Consulting &amp; training</h3>
+      <p>Straight answers, no jargon, and steps you&rsquo;ll actually follow.</p>
+    </li>
+    <li>
+      <span class="num">05</span>
+      <h3>Secure code review</h3>
+      <p>A home inspection for your software, before it goes live.</p>
+    </li>
+  </ol>
+</section>
+
+<section id="why">
+  <div class="section-head">
+    <h2>Who needs this?</h2>
+    <p>Anyone with something worth stealing.</p>
+  </div>
+
+  <div class="two-col">
+    <article>
+      <h3>Individuals</h3>
+      <p>Executive, public figure, or just a good target? We show you what an attacker could find about you, then close the gaps.</p>
+    </article>
+    <article>
+      <h3>Businesses</h3>
+      <p>One weak password or one convincing email can mean weeks of downtime. Finding the gap now costs far less than the break-in later.</p>
+    </article>
+  </div>
+</section>
+
+<section id="about" class="panel">
+  <div class="inner">
+    <div class="about-copy">
+      <h2>Small team.<br>Sharp focus.</h2>
+      <p>Offensive security meets minimalist software. Small code, few dependencies, clear results.</p>
+      <p>OSEP and OSCP certified, with hands-on experience in healthcare IT and banking.</p>
+      <p>Built for Alberta businesses, priced without the agency bloat.</p>
     </div>
-  </section>
 
-  <section id="services">
-    <p class="label">// Services</p>
-    <h2>What We Do</h2>
-    <p class="sub">In short: we try to break in before someone else does, then show you exactly how to lock the door.</p>
-    <div class="cards">
-      <div class="card reveal">
-        <h3>Penetration Testing</h3>
-        <p>Spot the holes before they get picked. Detailed testing across your infrastructure and applications, with clear remediation guidance.</p>
-        <p class="plain">In plain terms: like hiring someone to try every door and window in your house, safely and with permission, so you find the weak ones before a burglar does.</p>
+    <dl class="facts">
+      <div>
+        <dt>Certified</dt>
+        <dd>
+          <a href="https://www.credential.net/476a1c92-2908-4ad8-9d2f-948cc0e24e3e" target="_blank" rel="noopener">OSEP</a>
+          &nbsp;&middot;&nbsp;
+          <a href="https://www.credential.net/44399a0b-6db6-42b5-b8ed-626aeff0ffe7" target="_blank" rel="noopener">OSCP</a>
+        </dd>
       </div>
-      <div class="card reveal">
-        <h3>Red Teaming</h3>
-        <p>Full adversary simulation. We test your defenses end-to-end under realistic threat scenarios, measuring resilience not just compliance.</p>
-        <p class="plain">In plain terms: a full dress rehearsal for a real break-in, testing your locks, your alarms, and how your team reacts under pressure.</p>
+      <div>
+        <dt>Sectors</dt>
+        <dd>Healthcare IT, banking, small business</dd>
       </div>
-      <div class="card reveal">
-        <h3>Phishing Campaigns</h3>
-        <p>Controlled simulations that test and train employees. Build real awareness, not just checkbox compliance.</p>
-        <p class="plain">In plain terms: we send safe, fake scam emails to your team to see who clicks, then teach everyone how to spot the real ones.</p>
+      <div>
+        <dt>Based in</dt>
+        <dd>Alberta, Canada</dd>
       </div>
-      <div class="card reveal">
-        <h3>Consulting &amp; Training</h3>
-        <p>Practical, direct, and quick. No-fluff advice on hardening your security posture, with training that actually sticks.</p>
-        <p class="plain">In plain terms: straight talk on how to protect yourself or your business, no jargon, just steps you can actually follow.</p>
+      <div>
+        <dt>Mission</dt>
+        <dd>Make malicious hackers unemployed.</dd>
       </div>
-      <div class="card reveal">
-        <h3>Secure Code Reviews</h3>
-        <p>Clear feedback, nothing cryptic. We review your codebase for security weaknesses and deliver actionable fixes.</p>
-        <p class="plain">In plain terms: if software is being built for you, we check it for hidden weak spots before it goes live, like a home inspector checking behind the walls.</p>
+      <div>
+        <dt>Status</dt>
+        <dd>Taking on engagements</dd>
       </div>
-      <div class="card card-cta reveal">
-        <h3>Sample Report</h3>
-        <p>See exactly what you get: a real-world pentest report showing our findings, methodology, and remediation format.</p>
-        <a href="resources/sample.pdf" target="_blank" class="btn">Download Sample</a>
-      </div>
+    </dl>
+  </div>
+</section>
+
+<section id="software">
+  <div class="section-head">
+    <h2>We also build</h2>
+    <p>Lean software, secure from the first commit.</p>
+  </div>
+
+  <div class="three-col">
+    <article>
+      <h3>Web apps</h3>
+      <p>Fast, minimal, hard to break.</p>
+    </article>
+    <article>
+      <h3>APIs</h3>
+      <p>Clean integrations, no over-engineering.</p>
+    </article>
+    <article>
+      <h3>Automation</h3>
+      <p>Less busywork, for ops or security teams.</p>
+    </article>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-head">
+    <h2>Say hello.</h2>
+    <p>Tell us what you&rsquo;re protecting, or just ask.</p>
+  </div>
+
+  <form id="contact-form" novalidate>
+    <label>Name<input type="text" id="name" autocomplete="name" placeholder="Jane Smith"></label>
+    <label>Email<input type="email" id="email" autocomplete="email" placeholder="jane@company.com"></label>
+    <label>Message<textarea id="message" rows="4" placeholder="What are we protecting?"></textarea></label>
+    <div class="form-foot">
+      <button type="button" id="send-btn" class="btn">Send message</button>
+      <p id="form-status" role="status" aria-live="polite"></p>
     </div>
-  </section>
+  </form>
+</section>
 
-  <section id="why">
-    <p class="label">// Why It Matters</p>
-    <h2>Is This For Me?</h2>
-    <p class="sub">Short answer: yes, if you have anything worth protecting. Here's why, in plain terms.</p>
-    <div class="cards">
-      <div class="card reveal">
-        <h3>For Individuals</h3>
-        <p>If you're a public figure, executive, or simply someone with money, a reputation, or private information, you're a more attractive target.</p>
-        <p class="plain">In plain terms: criminals go after people who look like a big payoff. We find out what a hacker could see or steal about you, and help you close those gaps, before it happens.</p>
-      </div>
-      <div class="card reveal">
-        <h3>For Businesses</h3>
-        <p>One weak password, one unpatched system, or one convincing scam email can lead to stolen customer data, drained accounts, or weeks of downtime.</p>
-        <p class="plain">In plain terms: it's cheaper to pay us to find the gaps now than to pay for a break-in later, in lost money, lost trust, and lost time.</p>
-      </div>
-    </div>
-  </section>
+</main>
 
-  <section id="about">
-    <div class="about-wrap">
-      <p class="label">// About</p>
-      <h2>Small team.<br>Big focus.</h2>
-      <div class="about-grid">
-        <div class="terminal reveal">
-          <div class="tbar">
-            <span class="tb red"></span><span class="tb yellow"></span><span class="tb green"></span>
-            <code>profile.sh</code>
-          </div>
-          <div class="tbody">
-            <p><span class="p">$</span> certifications</p>
-            <p class="o c"><a href="https://www.credential.net/44399a0b-6db6-42b5-b8ed-626aeff0ffe7">&rarr; OSCP Certified</a></p>
-            <p><span class="p">$</span> sectors</p>
-            <p class="o">Healthcare IT, Banking &amp; Small Businesses</p>
-            <p><span class="p">$</span> location</p>
-            <p class="o">Alberta, Canada &#127809;</p>
-            <p><span class="p">$</span> philosophy</p>
-            <p class="o">"Make malicious hackers unemployed"</p>
-            <p><span class="p">$</span> status</p>
-            <p class="o"><span class="pdot"></span> Available for engagements</p>
-          </div>
-        </div>
-        <div class="about-text reveal">
-          <p>We work at the intersection of offensive security and minimalist software design. Small code. No bloat. Few deps. Clear results.</p>
-          <p>OSCP-certified with real-world experience across healthcare IT and the banking sector, we bring practical depth to every engagement, not just textbook methodology.</p>
-          <p>We support Alberta businesses and believe great security does not require a bloated agency price tag.</p>
-          <div class="tags">
-            <span>OSCP</span><span>Penetration Testing</span><span>Red Team</span><span>Full-Stack Dev</span><span>Alberta, Canada</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<footer class="site-footer">
+  <p>&copy; 2026 Buster Cybersecurity Solutions &middot; Alberta, Canada</p>
+  <p><a href="mailto:info@bustercybersec.com">info@bustercybersec.com</a></p>
+</footer>
 
-  <section id="software">
-    <p class="label">// Software</p>
-    <h2>Custom Development</h2>
-    <p class="sub">Security and software go hand-in-hand. We build full-stack apps, APIs, and automation tools, dependency-light by default, with security baked in from day one.</p>
-    <div class="cards cards-3">
-      <div class="card reveal"><div class="glyph">&lt;/&gt;</div><h3>Web Apps</h3><p>Fast, scalable, and secure. Built lean with minimal dependencies.</p></div>
-      <div class="card reveal"><div class="glyph">{ }</div><h3>APIs</h3><p>Clean integrations. No over-engineering, just the right architecture.</p></div>
-      <div class="card reveal"><div class="glyph">&#9881;</div><h3>Automation</h3><p>Tools that eliminate repetitive work, for ops or internal security use.</p></div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <p class="label">// Contact</p>
-    <h2>Get in Touch</h2>
-    <p class="sub">Have a project in mind, or not sure where to start? We respond to every message personally, and we're happy to explain things in plain English.</p>
-    <form class="reveal" id="contact-form">
-      <label>Name<input type="text" id="name" placeholder="Jane Smith"></label>
-      <label>Email<input type="email" id="email" placeholder="jane@company.com"></label>
-      <label>Message<textarea id="message" rows="5" placeholder="Tell us about your project..."></textarea></label>
-      <button type="button" id="send-btn" class="btn">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <img src="resources/buster_logo_square.png" alt="Logo">
-    <p>&copy; 2026 Buster Cybersecurity Solutions &middot; Alberta, Canada</p>
-  </footer>
-
-  <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
